@@ -1,10 +1,12 @@
-﻿{
+{
   "name": "100milionseek",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "type": "module",
   "main": "./opencode.mjs",
-  "exports": { ".": "./opencode2.mjs" },
+  "exports": {
+    ".": "./opencode2.mjs"
+  },
   "description": "100milionseek provider plugin for Magpie: free daily-token deepseek V4.1 Flash, quota from the x-quota headers, and the JEV judge model as a routing classifier",
   "keywords": [
     "opencode",
@@ -46,9 +48,9 @@
     "name": "100milionseek",
     "summary": {
       "en": "Free deepseek V4.1 Flash on 100milionseek, with the daily token allowance read from the API's own quota headers",
-      "zh": "100milionseek 涓婂厤璐圭殑 deepseek V4.1 Flash锛屾瘡鏃ラ搴︾洿鎺ヨ API 鐨勯厤棰濆搷搴斿ご"
+      "zh": "100milionseek 上免费的 deepseek V4.1 Flash，每日额度直接读 API 的配额响应头"
     },
     "maxConcurrency": 5,
-    "icon": "https://100milionseek.top/favicon.svg"
+    "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzBiMGYwZCIvPjxyZWN0IHg9IjciIHk9IjkiIHdpZHRoPSIzLjIiIGhlaWdodD0iMTQiIHJ4PSIxLjIiIGZpbGw9IiMxMGI5ODEiLz48cmVjdCB4PSIxMi42IiB5PSI5IiB3aWR0aD0iNS42IiBoZWlnaHQ9IjE0IiByeD0iMi44IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi40Ii8+PHJlY3QgeD0iMjAuNCIgeT0iOSIgd2lkdGg9IjUuNiIgaGVpZ2h0PSIxNCIgcng9IjIuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNCIvPjwvc3ZnPg=="
   }
 }
