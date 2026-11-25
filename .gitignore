@@ -21,3 +21,5 @@ Thumbs.db
 # local env & secrets
 .env
 .env.*
+# npm: local publish settings (registry pin; would carry a token if one is added)
+.npmrc

@@ -1,6 +1,6 @@
-{
+﻿{
   "name": "opencode-100milionseek-auth",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "main": "./opencode.mjs",
@@ -46,7 +46,7 @@
     "name": "100milionseek",
     "summary": {
       "en": "Free DeepSeek V4.1 Flash on 100milionseek, with the daily token allowance read from the API's own quota headers",
-      "zh": "100milionseek 上免费的 DeepSeek V4.1 Flash，每日额度直接读 API 的配额响应头"
+      "zh": "100milionseek 涓婂厤璐圭殑 DeepSeek V4.1 Flash锛屾瘡鏃ラ搴︾洿鎺ヨ API 鐨勯厤棰濆搷搴斿ご"
     },
     "maxConcurrency": 5,
     "icon": "https://100milionseek.top/favicon.svg"
