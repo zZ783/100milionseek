@@ -1,0 +1,54 @@
+{
+  "name": "opencode-100milionseek-auth",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "main": "./opencode.mjs",
+  "exports": { ".": "./opencode2.mjs" },
+  "description": "100milionseek provider plugin for Magpie: free daily-token DeepSeek V4.1 Flash, quota from the x-quota headers, and the JEV judge model as a routing classifier",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "magpie",
+    "100milionseek",
+    "deepseek",
+    "provider",
+    "free"
+  ],
+  "license": "MIT",
+  "author": "zZ783",
+  "homepage": "https://github.com/zZ783/100milionseek#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zZ783/100milionseek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zZ783/100milionseek/issues"
+  },
+  "files": [
+    "index.mjs",
+    "opencode.mjs",
+    "opencode2.mjs",
+    "src/",
+    "test/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/all.mjs",
+    "check": "node --check index.mjs && node --check src/index.mjs && node test/all.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "magpie": {
+    "name": "100milionseek",
+    "summary": {
+      "en": "Free DeepSeek V4.1 Flash on 100milionseek, with the daily token allowance read from the API's own quota headers",
+      "zh": "100milionseek 上免费的 DeepSeek V4.1 Flash，每日额度直接读 API 的配额响应头"
+    },
+    "maxConcurrency": 5,
+    "icon": "https://100milionseek.top/favicon.svg"
+  }
+}
