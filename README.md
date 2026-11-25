@@ -1,4 +1,4 @@
-# opencode-100milionseek-auth
+# 100milionseek
 
 A [magpie](https://usemagpie.ai) provider plugin for
 [100milionseek](https://100milionseek.top) — the relay that gives every key a
@@ -24,8 +24,8 @@ What the plugin adds beyond a plain `providers.json` entry:
 ## Install
 
 ```sh
-magpie plugin add ./opencode-100milionseek-auth
-# or, once published: magpie plugin add opencode-100milionseek-auth
+magpie plugin add ./100milionseek
+# or, once published: magpie plugin add 100milionseek
 magpie plugin login hundred-milion-seek
 ```
 
@@ -107,7 +107,7 @@ thing without touching your own magpie:
 sb=$(mktemp -d)
 m() { env HOME=$sb XDG_CONFIG_HOME=$sb/.config XDG_CACHE_HOME=$sb/.cache \
       MAGPIE_ADDR=127.0.0.1:3499 magpie "$@"; }
-m plugin add ./opencode-100milionseek-auth
+m plugin add ./100milionseek
 m plugin --json
 m plugin login hundred-milion-seek
 m provider test hundred-milion-seek

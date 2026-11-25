@@ -1,4 +1,4 @@
-# opencode-100milionseek-auth
+# 100milionseek
 
 一个给 [magpie](https://usemagpie.ai) 用的 [100milionseek](https://100milionseek.top)
 供应商插件。100milionseek 给每个 key 每天 **1 亿 token** 的免费
@@ -21,8 +21,8 @@
 ## 安装
 
 ```sh
-magpie plugin add ./opencode-100milionseek-auth
-# 发布到 npm 之后：magpie plugin add opencode-100milionseek-auth
+magpie plugin add ./100milionseek
+# 发布到 npm 之后：magpie plugin add 100milionseek
 magpie plugin login hundred-milion-seek
 ```
 
@@ -96,7 +96,7 @@ npm run check     # 语法检查 + 测试
 sb=$(mktemp -d)
 m() { env HOME=$sb XDG_CONFIG_HOME=$sb/.config XDG_CACHE_HOME=$sb/.cache \
       MAGPIE_ADDR=127.0.0.1:3499 magpie "$@"; }
-m plugin add ./opencode-100milionseek-auth
+m plugin add ./100milionseek
 m plugin --json
 m plugin login hundred-milion-seek
 m provider test hundred-milion-seek
