@@ -157,6 +157,23 @@ export async function HundredMilionSeekPlugin(input, options = {}) {
           type: "api",
           label: "100milionseek API key",
           placeholder: "hms-…",
+          // The key is collected through a prompt, so magpie hands it to
+          // `authorize` as `inputs.key`. Without `prompts`, older hosts draw
+          // their own key box and call `authorize` with no key at all, and
+          // newer ones have nowhere to ask for one.
+          prompts: [
+            {
+              type: "password",
+              key: "key",
+              message: "100milionseek API key",
+              placeholder: "hms-…",
+              validate: (value) => {
+                if (typeof value !== "string" || !value.trim()) return "An API key is required.";
+                if (/[\r\n]/.test(value)) return "The key must not contain line breaks.";
+                return undefined;
+              },
+            },
+          ],
           // Checked before it is stored, so a typo fails at sign-in instead of
           // as a 401 in the middle of a chat. A network failure is not the
           // key's fault and must not refuse it.

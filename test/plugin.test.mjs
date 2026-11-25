@@ -66,6 +66,21 @@ test("auth names the provider, its five slots and its icon", async () => {
   assert.equal(plugin.auth.checkin, undefined);
 });
 
+test("the key is asked for through a prompt, so magpie hands it to authorize", async () => {
+  // Without `prompts` the host draws its own key box and calls authorize with
+  // no key, which is what produced "An API key is required" at sign-in.
+  const plugin = await HundredMilionSeekPlugin({}, { fetchImpl: async () => json({}) });
+  const [method] = plugin.auth.methods;
+  assert.ok(Array.isArray(method.prompts) && method.prompts.length >= 1);
+  const keyPrompt = method.prompts.find((p) => p.key === "key");
+  assert.ok(keyPrompt, "there is a prompt that submits `key`");
+  assert.equal(typeof keyPrompt.validate, "function");
+  // The prompt's own validation rejects an empty or multi-line key.
+  assert.match(keyPrompt.validate("   "), /required/i);
+  assert.match(keyPrompt.validate("hms-a\r\nb"), /line break/i);
+  assert.equal(keyPrompt.validate("hms-ok"), undefined);
+});
+
 test("the sign-in check accepts a working key and remembers the allowance it saw", async () => {
   const { calls, fetchImpl } = recorder(json({ object: "list", data: [] }, 200, QUOTA));
   const plugin = await HundredMilionSeekPlugin({}, { fetchImpl });
